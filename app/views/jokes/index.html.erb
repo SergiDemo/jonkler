@@ -1,0 +1,20 @@
+<h1>Welcome to Jonkler</h1>
+<h2>Анекдоты</h2>
+
+<%= link_to 'Добавить анекдот', new_joke_path %>
+
+<% if @jokes.any? %>
+  <% @jokes.each do |joke| %>
+    <p>
+      <% if joke.user %>
+      <strong><%= link_to joke.user.username, user_path(joke.user.id) %>:</strong>
+      <% else %>
+      <strong>[Удаленные пользователи]:</strong>
+      <% end %>
+      <%= joke.body %>
+    </p>
+  <% end %>
+<% else %>
+  <p>Нет шуток для отображения.</p>
+<% end %>
+

@@ -1,0 +1,9 @@
+<h1>Анекдоты пользователя: <%= @user.username %></h1>
+
+<% if @jokes.any? %>
+  <% @jokes.each do |joke| %>
+    <p><strong><%= joke.user.username %>:</strong> <%= joke.body %></p>
+  <% end %>
+<% else %>
+  <p>Нет анекдотов для отображения.</p>
+<% end %>

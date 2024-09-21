@@ -1,0 +1,15 @@
+<h1>Добавить анекдот</h1>
+
+<%= form_with model: @joke, url: jokes_path, local: true do |form| %>
+  <div>
+    <%= form.label :username, "Введите имя пользователя" %>
+    <%= form.text_field :username, required: true %>
+  </div>
+  <div>
+    <%= form.label :text, "Введите шутку" %>
+    <%= form.text_area :text, required: true %>
+  </div>
+  <div>
+    <%= form.submit "Сохранить" %>
+  </div>
+<% end %>
