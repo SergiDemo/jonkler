@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class JokesController < ApplicationController
   def index
     @jokes = Joke.includes(:user).all
@@ -8,12 +10,13 @@ class JokesController < ApplicationController
     result = creator.call
 
     if result.is_a?(Joke)
-      redirect_to jokes_path, notice: "Шутка успешно сохранена."
+      redirect_to jokes_path, notice: 'Шутка успешно сохранена.'
     else
       flash.now[:alert] = "Ошибка: #{result.full_messages.to_sentence}"
       render :new
     end
   end
+
   def show
     @joke = Joke.find(params[:id])
     @user = @joke.user
