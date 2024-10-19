@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class JokeCreator
   def initialize(username, joke_body)
     @username = username

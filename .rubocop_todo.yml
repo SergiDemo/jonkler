@@ -1,0 +1,75 @@
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+  rubocop-rspec: config/default.yml
+
+require:
+  - rubocop-faker
+  - rubocop-rspec
+  - rubocop-md
+
+AllCops:
+  TargetRubyVersion: 3.3
+  Exclude:
+    - 'db/**/*'
+    - 'bin/*'
+    - 'config/environments/development.rb'
+  NewCops: enable
+
+RSpec:
+  Language:
+    ExampleGroups:
+      Regular:
+        - describe_rule
+      Focused:
+        - fdescribe_rule
+      Skipped:
+        - xdescribe_rule
+    Includes:
+      Examples:
+        - succeed
+        - failed
+        - fsucceed
+        - ffailed
+        - xsucceed
+        - xfailed
+        
+
+Layout/ClassStructure:
+  Enabled: true
+
+Layout/MultilineArrayLineBreaks:
+  Enabled: true
+
+Layout/MultilineAssignmentLayout:
+  Enabled: true
+
+Layout/MultilineHashKeyLineBreaks:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+RSpec/IndexedLet:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+  
+  
+
+RSpec/ContextWording:
+  AllowedPatterns:
+    - scopes
+    - validations
+    - normalization
+
