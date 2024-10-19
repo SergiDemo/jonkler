@@ -12,6 +12,7 @@ AllCops:
   Exclude:
     - 'db/**/*'
     - 'bin/*'
+    - 'config/environments/development.rb'
   NewCops: enable
 
 RSpec:
@@ -31,6 +32,7 @@ RSpec:
         - ffailed
         - xsucceed
         - xfailed
+        
 
 Layout/ClassStructure:
   Enabled: true
@@ -62,9 +64,12 @@ RSpec/IndexedLet:
 
 RSpec/ExampleLength:
   Enabled: false
+  
+  
 
 RSpec/ContextWording:
   AllowedPatterns:
     - scopes
     - validations
     - normalization
+
