@@ -1,2 +1,1 @@
-RSpec.describe User do
-end
+# frozen_string_literal: true
