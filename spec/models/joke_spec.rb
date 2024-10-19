@@ -1,10 +1,8 @@
-# frozen_string_literal: true
+  # frozen_string_literal: true
 
-RSpec.describe Joke do
   RSpec.describe Joke do
     describe 'associations' do
       it { is_expected.to belong_to(:user) }
-    end
     end
 
     describe 'validations' do
